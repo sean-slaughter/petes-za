@@ -1,11 +1,6 @@
 class ItemsController < ApplicationController
-    def create
-    end
-
     def show
+        item = Item.find_by(id: params[:id])
+        render json: item, except: [:created_at, :updated_at, :menu_id]
     end
-
-    def index
-    end
-    
 end

@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 pizza_menu = Menu.create(category: "pizza")
 salad_menu = Menu.create(category: "salad")
-pasta menu = Menu.create(category: "pasta")
-sides_menu.items = Menu.create(category: "sides")
+pasta_menu = Menu.create(category: "pasta")
+sides_menu = Menu.create(category: "sides")
 drinks_menu = Menu.create(category: "drinks")
 
 

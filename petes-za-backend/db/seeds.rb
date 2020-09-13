@@ -42,7 +42,8 @@ sides_menu.items.build(name: "Stuffed Cheesy Bread (Bacon & Jalepeno)", descript
 sides_menu.items.build(name: "Paremesan Bread Bites", description: "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.", image_url: "parmesan_bites.jpg", price: 5.99)
 sides_menu.items.build(name: "Cinnamon Bread Twists", description: "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.", image_url: "cinnamon_bread_twists.jpg", price: 5.99)
 
-drinks_menu.items.build(name: "Fanta Orange", description: "2 liter bottle", price: 2.99)
-drinks_menu.items.build(name: "Fanta Orange", description: "2 liter bottle", price: 2.99)
-drinks_menu.items.build(name: "Fanta Orange", description: "2 liter bottle", price: 2.99)
-drinks_menu.items.build(name: "Fanta Orange", description: "2 liter bottle", price: 2.99)
+drinks_menu.items.build(name: "Fanta Orange", description: "2 liter bottle", image_url: "fanta.jpg", price: 2.99)
+drinks_menu.items.build(name: "Coca Cola", description: "2 liter bottle", image_url: "coke.jpg", price: 2.99)
+drinks_menu.items.build(name: "Diet Coke", description: "2 liter bottle", image_url: "diet_coke.jpg", price: 2.99)
+drinks_menu.items.build(name: "Sprite", description: "2 liter bottle", image_url: "sprite.jpg", price: 2.99)
+drinks_menu.items.build(name: "Dasani Water", description: "20oz. bottle", image_url: "water.jpg", price: 1.99)

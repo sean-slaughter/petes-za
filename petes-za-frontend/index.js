@@ -1,1 +1,6 @@
-console.log("Hello world")
+document.addEventListener("DOMContentLoaded", function(){
+    const body = document.querySelector("body");
+    const h1 = document.createElement("h1");
+    h1.innerHTML = "Hello World!";
+    body.appendChild(h1);
+})

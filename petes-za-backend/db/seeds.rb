@@ -47,3 +47,20 @@ drinks_menu.items.build(name: "Coca Cola", description: "2 liter bottle", image_
 drinks_menu.items.build(name: "Diet Coke", description: "2 liter bottle", image_url: "diet_coke.jpg", price: 2.99)
 drinks_menu.items.build(name: "Sprite", description: "2 liter bottle", image_url: "sprite.jpg", price: 2.99)
 drinks_menu.items.build(name: "Dasani Water", description: "20oz. bottle", image_url: "water.jpg", price: 1.99)
+
+if pizza_menu.valid?
+    pizza_menu.save
+end
+if pasta_menu.valid?
+    pasta_menu.save
+end
+if salad_menu.valid?
+    salad_menu.save
+end
+if sides_menu.valid?
+    sides_menu.save
+end
+if drinks_menu.valid?
+    drinks_menu.save
+end
+

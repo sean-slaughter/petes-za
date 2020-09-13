@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :menus
-  resources :items
-  resources :orders
+  resources :menus, only: [:index]
+  resources :items, only: [:show]
+  resources :orders, only: [:create, :show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

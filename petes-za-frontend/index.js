@@ -22,8 +22,12 @@ async function getMenus(){
 }
 
 
-function addToCart(itemId){
+function addToCart(e){
+    console.log(e.target)
+}
 
+function moreInfo(e){
+    console.log(e.target)
 }
 
 function renderMenu(e){

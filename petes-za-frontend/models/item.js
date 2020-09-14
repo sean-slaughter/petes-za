@@ -31,11 +31,13 @@ class Item{
         const addBtn = document.createElement("button");
         addBtn.innerText = "Add to Cart";
         addBtn.className = "btn"
-        addBtn.addEventListener("click", addToCart(this.id))
+        addBtn.addEventListener("click", e => addToCart(e))
+        addBtn.id = this.id
         const customizeBtn = document.createElement("button");
         customizeBtn.innerText = "More Info";
         customizeBtn.className = "btn"
-        customizeBtn.addEventListener("click", addToCart(this.id))
+        customizeBtn.addEventListener("click", e => moreInfo(e))
+        customizeBtn.id = this.id
         cardAction.appendChild(addBtn);
         cardAction.appendChild(customizeBtn);
         //append to card

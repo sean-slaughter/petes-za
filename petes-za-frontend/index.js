@@ -18,3 +18,8 @@ async function getMenus(){
         console.log(err)
     }
 }
+
+
+function addToCart(itemId){
+    
+}

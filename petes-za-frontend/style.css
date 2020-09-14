@@ -22,3 +22,7 @@ nav.nav-center ul li {
 nav.nav-center ul li a {
     display: inline-block;
 }
+
+.item-description{
+    font-size: 10px;
+}

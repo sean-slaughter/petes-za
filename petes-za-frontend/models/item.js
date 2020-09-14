@@ -9,7 +9,7 @@ class Item{
 
     renderOnMenu(){
         const card = document.createElement("div");
-        card.className = "card";
+        card.className = "card medium";
 
         const cardImgDiv = document.createElement("div");
         cardImgDiv.className = 'card-image'
@@ -32,8 +32,17 @@ class Item{
         description.innerText = this.description
         cardContent.appendChild(description);
 
+        const cardAction = document.createElement("div");
+        cardAction.className = "card-action";
+        const cardBtn = document.createElement("button");
+        cardBtn.innerText = "Add to Cart";
+        cardBtn.className = "btn"
+        cardBtn.addEventListener("click", addToCart(this.id))
+        cardAction.appendChild(cardBtn);
+        
         card.appendChild(cardImgDiv);
         card.appendChild(cardContent);
+        card.appendChild(cardAction);
         return card;
         
     }

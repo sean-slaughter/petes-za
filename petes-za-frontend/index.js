@@ -3,6 +3,8 @@ const baseURL = "http://localhost:3000/"
 const menus = [];
 document.addEventListener("DOMContentLoaded", function(){
     getMenus();
+    const menuButtons = document.querySelectorAll(".menu-button")
+    menuButtons.forEach(button => button.addEventListener("click", e => renderMenu(e)))
 })
 
 async function getMenus(){
@@ -21,5 +23,9 @@ async function getMenus(){
 
 
 function addToCart(itemId){
-    
+
+}
+
+function renderMenu(e){
+    console.log(e.target)
 }

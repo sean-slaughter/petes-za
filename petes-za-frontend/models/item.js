@@ -8,38 +8,37 @@ class Item{
     }
 
     renderOnMenu(){
+        //create card
         const card = document.createElement("div");
         card.className = "card medium";
-
+        //create card img
         const cardImgDiv = document.createElement("div");
         cardImgDiv.className = 'card-image'
-
         const cardImg = document.createElement("img")
         cardImg.src = this.image_url;
-
         cardImgDiv.appendChild(cardImg);
-
+        //create card content
         const cardContent = document.createElement("div");
         cardContent.className = "card-content";
-
         const cardTitle = document.createElement("span");
         cardTitle.className = "card-title";
         cardTitle.innerText = this.name;
         cardContent.appendChild(cardTitle);
-
-        const description = document.createElement("p")
-        description.className = "item-description"
-        description.innerText = this.description
-        cardContent.appendChild(description);
-
+      
+        //create card action
         const cardAction = document.createElement("div");
         cardAction.className = "card-action";
-        const cardBtn = document.createElement("button");
-        cardBtn.innerText = "Add to Cart";
-        cardBtn.className = "btn"
-        cardBtn.addEventListener("click", addToCart(this.id))
-        cardAction.appendChild(cardBtn);
-        
+        const addBtn = document.createElement("button");
+        addBtn.innerText = "Add to Cart";
+        addBtn.className = "btn"
+        addBtn.addEventListener("click", addToCart(this.id))
+        const customizeBtn = document.createElement("button");
+        customizeBtn.innerText = "More Info";
+        customizeBtn.className = "btn"
+        customizeBtn.addEventListener("click", addToCart(this.id))
+        cardAction.appendChild(addBtn);
+        cardAction.appendChild(customizeBtn);
+        //append to card
         card.appendChild(cardImgDiv);
         card.appendChild(cardContent);
         card.appendChild(cardAction);

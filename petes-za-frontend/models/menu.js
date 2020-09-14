@@ -1,7 +1,8 @@
 class Menu{
-    constructor(id, category, items){
-        this.id = id;
-        this.category = category
-        this.items = items;
+    constructor(menu){
+        this.id = menu["id"];
+        this.category = menu["category"]
+        this.items = menu["items"]
+        items.forEach(item => this.items.push(new Item(item)))
     }
 }

@@ -13,7 +13,7 @@ class Menu{
             const list = document.getElementById("menu-items")
             const col = document.createElement("div");
             col.className = "col s6 m3 l4";
-            col.appendChild(item.renderOnMenu());
+            col.appendChild(this.items[item].renderOnMenu());
             list.appendChild(col);
         }
         

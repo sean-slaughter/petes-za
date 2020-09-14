@@ -34,6 +34,7 @@ class Item{
 
         card.appendChild(cardImgDiv);
         card.appendChild(cardContent);
+        return card;
         
     }
 }

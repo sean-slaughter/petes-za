@@ -4,11 +4,21 @@ body{
 .landing-image{
     max-width : auto;
 }
-
-.nav-main{
+nav{
     background-color: #001524;
 }
 
-.nav-menu{
-    background-color: white;
+.menu-button{
+    margin: 10px;
+}
+
+nav.nav-center ul {
+    text-align: center;
+}
+nav.nav-center ul li {
+    display: inline;
+    float: none;
+}
+nav.nav-center ul li a {
+    display: inline-block;
 }

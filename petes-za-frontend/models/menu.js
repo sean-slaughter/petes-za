@@ -8,7 +8,8 @@ class Menu{
     }
 
     renderItems(){
-        for(item of this.items){
+        
+        for(const item in this.items){
             const list = document.getElementById("menu-items")
             const col = document.createElement("div");
             col.className = "col s6 m3 l4";

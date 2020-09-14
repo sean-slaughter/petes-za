@@ -4,3 +4,11 @@ body{
 .landing-image{
     max-width : auto;
 }
+
+.nav-main{
+    background-color: #001524;
+}
+
+.nav-menu{
+    background-color: white;
+}

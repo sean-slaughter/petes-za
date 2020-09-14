@@ -31,5 +31,8 @@ function moreInfo(e){
 }
 
 function renderMenu(e){
-    console.log(e.target)
+    const list = document.getElementById("menu-items")
+    list.innerHTML = "";
+    console.log(e.target.innerHTML)
+
 }

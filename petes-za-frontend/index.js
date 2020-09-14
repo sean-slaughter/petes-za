@@ -33,6 +33,6 @@ function moreInfo(e){
 function renderMenu(e){
     const list = document.getElementById("menu-items")
     list.innerHTML = "";
-    console.log(e.target.innerHTML)
-
+    menu = menus.find(menu => menu.id == e.target.id)
+    menu.renderItems();
 }

@@ -1,4 +1,5 @@
 class Item{
+
     static all = [];
 
     constructor(item){
@@ -7,7 +8,7 @@ class Item{
         this.description = item["description"];
         this.image_url = `images/${item["image_url"]}`;
         this.price = item["price"];
-        this.all.push(this);
+        Item.all.push(this);
     }
 
     renderOnMenu(){
@@ -48,6 +49,5 @@ class Item{
         card.appendChild(cardContent);
         card.appendChild(cardAction);
         return card;
-        
     }
 }

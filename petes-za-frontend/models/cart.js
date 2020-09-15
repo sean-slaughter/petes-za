@@ -1,16 +1,12 @@
 class Cart{
-    constructor(){
-        this.contents = []
-        this.total = 0;
+    constructor(contents = [], total = 0){
+        this.contents = contents;
+        this.total = total;
     }
 
-    get total(){
-        return this.total
-    }
-
-    addToCart(item){
+    addItem(item){
         this.contents.push(item);
-        this.total += item.price;
+        this.total += item.price
+        console.log(`${item.name} has been added to the cart.`)
     }
-
 }

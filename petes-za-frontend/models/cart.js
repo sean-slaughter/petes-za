@@ -5,10 +5,12 @@ class Cart{
     }
 
     addItem(item){
-        this.contents.push(item);
+        if (!cart.contents.includes(item)){
+            this.contents.push(item);
+        }
         this.total += item.price
+        item.quantity++;
         M.toast({html: `${item.name} has been added to your cart.`})
-        console.log(`${item.name} has been added to the cart.`)
     }
     
     renderCart(){

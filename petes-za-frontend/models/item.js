@@ -8,6 +8,7 @@ class Item{
         this.description = item["description"];
         this.image_url = `images/${item["image_url"]}`;
         this.price = item["price"];
+        this.quantity = 0;
         Item.all.push(this);
     }
 

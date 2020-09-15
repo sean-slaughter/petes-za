@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function(){
     const menuButtons = document.querySelectorAll(".menu-button")
     menuButtons.forEach(button => button.addEventListener("click", e => renderMenu(e)))
 })
-
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
 async function getMenus(){
     try{
         const promise = await fetch(baseURL + "menus");

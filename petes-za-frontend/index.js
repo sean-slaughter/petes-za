@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     menuButtons.forEach(button => button.addEventListener("click", e => renderMenu(e)))
 })
 $(document).ready(function(){
-    $('.parallax').parallax();
+    $('.collapsible').collapsible();
   });
 async function getMenus(){
     try{

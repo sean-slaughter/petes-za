@@ -27,7 +27,10 @@ class Item{
         const cardTitle = document.createElement("span");
         cardTitle.className = "card-title";
         cardTitle.innerText = this.name;
+        const p = document.createElement("p");
+        p.innerHTML = `$${this.price}`
         cardContent.appendChild(cardTitle);
+        cardContent.appendChild(p);
       
         //create card action
         const cardAction = document.createElement("div");

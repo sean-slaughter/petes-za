@@ -1,7 +1,7 @@
 //load pizza menu
 const baseURL = "http://localhost:3000/"
 const menus = [];
-const cart = new Cart
+const cart = new Cart();
 document.addEventListener("DOMContentLoaded", function(){
     
     getMenus();
@@ -25,7 +25,8 @@ async function getMenus(){
 
 
 function addToCart(e){
-    
+    item = Item.all
+    console.log(e.target);
 }
 
 function moreInfo(e){

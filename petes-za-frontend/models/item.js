@@ -1,10 +1,13 @@
 class Item{
+    static all = [];
+
     constructor(item){
         this.id = item["id"];
         this.name = item["name"]
         this.description = item["description"];
         this.image_url = `images/${item["image_url"]}`;
         this.price = item["price"];
+        this.all.push(this);
     }
 
     renderOnMenu(){
@@ -33,13 +36,13 @@ class Item{
         addBtn.className = "btn"
         addBtn.addEventListener("click", e => addToCart(e))
         addBtn.id = this.id
-        const customizeBtn = document.createElement("button");
-        customizeBtn.innerText = "More Info";
-        customizeBtn.className = "btn"
-        customizeBtn.addEventListener("click", e => moreInfo(e))
-        customizeBtn.id = this.id
+        const infoBtn = document.createElement("button");
+        infoBtn.innerText = "More Info";
+        infoBtn.className = "btn"
+        infoBtn.addEventListener("click", e => moreInfo(e))
+        infoBtn.id = this.id
         cardAction.appendChild(addBtn);
-        cardAction.appendChild(customizeBtn);
+        cardAction.appendChild(infoBtn);
         //append to card
         card.appendChild(cardImgDiv);
         card.appendChild(cardContent);

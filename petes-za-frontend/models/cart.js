@@ -10,7 +10,7 @@ class Cart{
         }
         this.total += item.price
         item.quantity++;
-        M.toast({html: `${item.name} has been added to your cart.`})
+        M.toast({html: `${item.name} has been added to your cart.`, displayLength: 1000, classes: 'rounded'})
         renderCart();
     }
     
@@ -24,24 +24,43 @@ class Cart{
                 this.contents.forEach(function(item){
                     cartContents.innerHTML += `
                     <div class="cart-item">
-                        <img src="${item.image_url}" alt="" class="cart-img">  <span class="cart-item-name">${item.name} - $${item.price}</span> <button class="remove-cart" id=${item.id}><i class="material-icons tiny">remove_shopping_cart</i></button> 
+                        <img src="${item.image_url}" alt="" class="cart-img">  <span class="cart-item-name">${item.name} - $${item.price} x ${item.quantity}</span> <button class="remove-cart" id=${item.id}><i class="material-icons tiny">remove_shopping_cart</i></button> 
                     </div>
                     <br>
                     `
-                    cartContents.querySelector(".remove-cart").addEventListener("click", e => removeFromCart(e));
             })
             cartContents.innerHTML += `
-            <span class="total">Total: $${this.total}</span><br>
+            <span class="total"><b>Total: $${this.total}</b></span><br><br>
             <button class="btn-small" id="order">Checkout</button>
         `
-            cartContents.querySelector("#order").addEventListener("click", this.checkOut);
+            const checkoutBtn = document.querySelector("#order")
+            checkoutBtn.addEventListener("click", this.checkOut);
+
+            const removeBtns = document.querySelectorAll(".remove-cart")
+            removeBtns.forEach(button => button.addEventListener("click", e => this.removeFromCart(e)))
         }
        
     }
 
+    removeFromCart(e){
+            const item = this.contents.find(item => item.id == e.target.parentElement.id);
+            item.quantity--;
+            this.total -= item.price
+            if (item.quantity > 1){
+                M.toast({html: `${item.name} has been removed from your cart.`, displayLength: 1000, classes: 'rounded'})
+                renderCart();
+            }
+            else{
+                const index = this.contents.indexOf(item);
+                this.contents.splice(index, 1);
+                M.toast({html: `${item.name} has been removed from your cart.`, displayLength: 1000, classes: 'rounded'})
+                renderCart();
+            }
+    }
+
     checkOut(){
-        order = new Order();
-        order.renderOrderForm()
+        const order = new Order();
+        order.renderOrderForm();
     }
     
    

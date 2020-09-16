@@ -23,7 +23,7 @@ class Item{
                 <span class="card-title activator">${this.name} <i class="material-icons right">more_vert</i></span>
             </div>
             <div class="card-action">
-                <button class="btn">Add to Cart</button>
+                <button class="btn add-cart" id="${this.id}">Add to Cart</button>
             </div>
             <div class="card-reveal">
                 <span class="card-title">${this.name} <i class="material-icons right">close</i></span>
@@ -31,6 +31,7 @@ class Item{
                 <p>$${this.price}</p>
             </div>
             `
+        card.querySelector(".add-cart").addEventListener('click', addToCart);
         return card;
 
     }

@@ -32,11 +32,16 @@ class Cart{
             })
             cartContents.innerHTML += `
             <span class="total">Total: $${this.total}</span><br>
-            <button class="btn-small" id="order">Place Order</button>
+            <button class="btn-small" id="order">Checkout</button>
         `
-            cartContents.querySelector("#order").addEventListener("click", e => placeOrder);
+            cartContents.querySelector("#order").addEventListener("click", this.checkOut);
         }
        
+    }
+
+    checkOut(){
+        order = new Order();
+        order.renderOrderForm()
     }
     
    

@@ -1,37 +1,73 @@
 class Order{
-    constructor(total){
-        this.name = "";
-        this.address = "";
+    constructor(total, items){
         this.total = total;
-        this.phone = "";
-        this.email = "";
+        this.items = items;
+        this.completed = false;
     }
 
     renderOrderForm(){
-        const orderForm = document.querySelector("#checkout-content");
-        orderForm.innerHTML = `
+      $("#checkout-content").css("display", "block").html(
+            `
                 <form class="checkout-form">
                    <div class="input-field checkout-input">
-                        <input type="text" name="order[name]" id="name">
+                        <input type="text" id="name" required>
                         <label for="name">Name</label>
                    </div>
                     <div class="input-field checkout-input">
-                        <input type="email" name="order[email]" id="email">
+                        <input type="email" id="email" required>
                         <label for="email">Email</label>
                    </div> 
                     <div class="input-field checkout-input">
-                        <input type="text" name="order[phone]" id="phone">
+                        <input type="text" id="phone" required>
                         <label for="phone">Phone Number</label>
                    </div> 
                     <div class="input-field checkout-input">
-                        <input type="text" name="order[address]" id="address">
+                        <input type="text"id="address" required>
                         <label for="address">Address</label>
                    </div> 
                    <div class="row center">
-                        <input class="btn-small"type="submit" value="Place Order">
+                        <button id="place-order" class="btn-small">Place Order</button>
                    </div> 
                 </form>
         `
-        
+        );
+        debugger
+        const orderBtn = document.querySelector("#place-order");
+        orderBtn.addEventListener("click", this.placeOrder.bind(this))
     }
+
+    async placeOrder(){
+        const itemIds = this.items.map(item => item.id)
+        console.log(this)
+        const data = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            phone: $("#phone").val(),
+            address: $("#address").val(),
+            item_ids: itemIds,
+            total: this.total,
+        }
+      
+        const config = {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }
+        try{
+            const response = await fetch(baseURL+"orders", config);
+            if(response.ok){
+                const json = await response.json();
+                console.log(json);
+                M.toast({html: `Your order has been successfully placed!`,classes: 'rounded'})
+            }
+        }
+        catch(err){
+            console.log(err);
+            M.toast({html: `There was an error processing your order!`,classes: 'rounded'})
+        }
+    }
+        
 }

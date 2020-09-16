@@ -25,7 +25,6 @@ async function getMenus(){
     }
 }
 
-
 function addToCart(e){
     item = Item.all.find(item => item.id == e.target.id)
     cart.addItem(item);

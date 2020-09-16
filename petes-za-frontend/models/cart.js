@@ -18,6 +18,7 @@ class Cart{
         const cartContents = document.getElementById("cart-contents");
         if (this.contents.length == 0){
             cartContents.innerHTML = "Your cart is currently empty!"
+            $("#checkout-content").css("display", "none")
         }
         else{
                 cartContents.innerHTML = "";
@@ -46,7 +47,7 @@ class Cart{
             const item = this.contents.find(item => item.id == e.target.parentElement.id);
             item.quantity--;
             this.total -= item.price
-            if (item.quantity > 1){
+            if (item.quantity > 0){
                 M.toast({html: `${item.name} has been removed from your cart.`, displayLength: 1000, classes: 'rounded'})
                 renderCart();
             }
@@ -59,8 +60,7 @@ class Cart{
     }
 
     checkOut(){
-        const orderTotal = this.total;
-        const order = new Order(orderTotal);
+        const order = new Order(this.total, this.contents);
         order.renderOrderForm();
     }
     

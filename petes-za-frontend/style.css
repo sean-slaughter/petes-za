@@ -44,3 +44,13 @@ nav.nav-center ul li a {
 #remove-cart{
     margin-left: 10px;
 }
+.checkout-form{
+    padding: 15px;
+    border: solid 1px;
+    border-radius: 15px;
+}
+.checkout-input{
+    width: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

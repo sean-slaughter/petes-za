@@ -34,7 +34,7 @@ class Cart{
             <button class="btn-small" id="order">Checkout</button>
         `
             const checkoutBtn = document.querySelector("#order")
-            checkoutBtn.addEventListener("click", this.checkOut);
+            checkoutBtn.addEventListener("click", this.checkOut.bind(this));
 
             const removeBtns = document.querySelectorAll(".remove-cart")
             removeBtns.forEach(button => button.addEventListener("click", e => this.removeFromCart(e)))
@@ -59,7 +59,8 @@ class Cart{
     }
 
     checkOut(){
-        const order = new Order();
+        const orderTotal = this.total;
+        const order = new Order(orderTotal);
         order.renderOrderForm();
     }
     

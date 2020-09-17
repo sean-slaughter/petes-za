@@ -37,14 +37,16 @@ class Order{
 
     async placeOrder(e){
         e.preventDefault()
-        const itemIds = this.items.map(item => item.id)
+        const items = this.items.map(item => {
+            return {id: item.id, quantity: item.quantity}
+        })
         console.log(this)
         const data = {
             name: $("#name").val(),
             email: $("#email").val(),
             phone: $("#phone").val(),
             address: $("#address").val(),
-            item_ids: itemIds,
+            items: items,
             total: this.total,
         }
       

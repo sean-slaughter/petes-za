@@ -89,7 +89,14 @@ class Order{
         }
         orderContainer.innerHTML += `
             <p class=""><b>Total: ${order.total}</b></p>
+            <button class="btn" id="cancel-order">Cancel Order</button>
         `
+        const cancelOrderBtn = document.querySelector("#cancel-order")
+        cancelOrderBtn.addEventListener("click", this.cancelOrder.bind(this))
+    }
+
+    cancelOrder(){
+        alert("order is cancelled!")
     }
         
 }

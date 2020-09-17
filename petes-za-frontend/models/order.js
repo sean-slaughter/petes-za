@@ -74,6 +74,7 @@ class Order{
     }
 
     renderOrder(order){
+        $(".orders-container").show();
         const orderContainer = document.querySelector("#orders")
         orderContainer.innerHTML = 
             `   <p class=""><u>${order.name}</u></p>
@@ -87,7 +88,7 @@ class Order{
             `
         }
         orderContainer.innerHTML += `
-            <p class="">Total: ${order.total}</p>
+            <p class=""><b>Total: ${order.total}</b></p>
         `
     }
         

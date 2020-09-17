@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
             total: params[:total],
             item_ids: params[:item_ids]
         )
-      
         if order.valid?
             render json: order, include: [items: {except: [:created_at, :updated_at, :menu_id]}]
         else

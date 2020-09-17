@@ -48,6 +48,7 @@ class Cart{
             item.quantity--;
             this.total -= item.price
             if (item.quantity > 0){
+        
                 M.toast({html: `${item.name} has been removed from your cart.`, displayLength: 1000, classes: 'rounded'})
                 renderCart();
             }

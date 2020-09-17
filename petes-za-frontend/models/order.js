@@ -10,33 +10,33 @@ class Order{
             `
                 <form class="checkout-form">
                    <div class="input-field checkout-input">
-                        <input type="text" id="name" required>
+                        <input type="text" name="name" id="name" required>
                         <label for="name">Name</label>
                    </div>
                     <div class="input-field checkout-input">
-                        <input type="email" id="email" required>
+                        <input type="email" name="email" id="email" required>
                         <label for="email">Email</label>
                    </div> 
                     <div class="input-field checkout-input">
-                        <input type="text" id="phone" required>
+                        <input type="text" name="phone" id="phone" required>
                         <label for="phone">Phone Number</label>
                    </div> 
                     <div class="input-field checkout-input">
-                        <input type="text"id="address" required>
+                        <input type="text"name="address" id="address"required>
                         <label for="address">Address</label>
                    </div> 
                    <div class="row center">
-                        <button id="place-order" class="btn-small">Place Order</button>
+                        <input type="submit" class="btn-small" value="Place Order">
                    </div> 
                 </form>
         `
         );
-        debugger
-        const orderBtn = document.querySelector("#place-order");
-        orderBtn.addEventListener("click", this.placeOrder.bind(this))
+        const form = document.querySelector("form")
+        form.addEventListener("submit", e => this.placeOrder.call(this, e))
     }
 
-    async placeOrder(){
+    async placeOrder(e){
+        e.preventDefault()
         const itemIds = this.items.map(item => item.id)
         console.log(this)
         const data = {

@@ -40,7 +40,6 @@ class Order{
         const items = this.items.map(item => {
             return {id: item.id, quantity: item.quantity}
         })
-        console.log(this)
         const data = {
             name: $("#name").val(),
             email: $("#email").val(),
@@ -62,16 +61,34 @@ class Order{
             const response = await fetch(baseURL+"orders", config);
             if(response.ok){
                 const json = await response.json();
-                console.log(json);
                 M.toast({html: `Your order has been successfully placed!`,classes: 'rounded'})
+                cart.clear();
+                this.renderOrder(json);
             }
         }
         catch(err){
             console.log(err);
             M.toast({html: `There was an error processing your order!`,classes: 'rounded'})
         }
-        cart.clear();
-        renderOrders();
+        
+    }
+
+    renderOrder(order){
+        const orderContainer = document.querySelector("#orders")
+        orderContainer.innerHTML = 
+            `   <p class=""><u>${order.name}</u></p>
+                <p class="">Email: ${order.email}</p>  
+                <p class="">Address: ${order.address}</p>    
+                <p class="">Phone: ${order.phone}</p>     
+            `
+        for(const item of order.items){
+            orderContainer.innerHTML += `
+                ${item.name} x ${item.quantity}
+            `
+        }
+        orderContainer.innerHTML += `
+            <p class="">Total: ${order.total}</p>
+        `
     }
         
 }

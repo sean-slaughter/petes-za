@@ -64,6 +64,11 @@ class Cart{
         const order = new Order(this.total, this.contents);
         order.renderOrderForm();
     }
+
+    clear(){
+        this.contents = [];
+        renderCart();
+    }
     
    
 }

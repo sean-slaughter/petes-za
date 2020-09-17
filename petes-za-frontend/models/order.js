@@ -70,6 +70,8 @@ class Order{
             console.log(err);
             M.toast({html: `There was an error processing your order!`,classes: 'rounded'})
         }
+        cart.clear();
+        renderOrders();
     }
         
 }

@@ -13,7 +13,7 @@ class Cart{
         M.toast({html: `${item.name} has been added to your cart.`, displayLength: 1000, classes: 'rounded'})
         renderCart();
     }
-    
+
     renderCart(){
         const cartContents = document.getElementById("cart-contents");
         if (this.contents.length == 0){
@@ -31,7 +31,7 @@ class Cart{
                     `
             })
             cartContents.innerHTML += `
-            <span class="total"><b>Total: $${this.total}</b></span><br><br>
+            <span class="total"><b>Total: $${this.total.toFixed(2)}</b></span><br><br>
             <button class="btn-small" id="order">Checkout</button>
         `
             const checkoutBtn = document.querySelector("#order")
@@ -44,11 +44,11 @@ class Cart{
     }
 
     removeFromCart(e){
+        try{
             const item = this.contents.find(item => item.id == e.target.parentElement.id);
             item.quantity--;
             this.total -= item.price
             if (item.quantity > 0){
-        
                 M.toast({html: `${item.name} has been removed from your cart.`, displayLength: 1000, classes: 'rounded'})
                 renderCart();
             }
@@ -58,6 +58,10 @@ class Cart{
                 M.toast({html: `${item.name} has been removed from your cart.`, displayLength: 1000, classes: 'rounded'})
                 renderCart();
             }
+        }
+        catch(err){
+            debugger
+        }
     }
 
     checkOut(){

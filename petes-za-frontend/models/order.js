@@ -2,7 +2,7 @@ class Order{
     constructor(total, items){
         this.total = total;
         this.items = items;
-        this.completed = false;
+        this.id = null;
     }
 
     renderOrderForm(){
@@ -74,6 +74,7 @@ class Order{
     }
 
     renderOrder(order){
+        this.id = order.id;
         $(".orders-container").show();
         const orderContainer = document.querySelector("#orders")
         orderContainer.innerHTML = 
@@ -93,12 +94,31 @@ class Order{
         `
         const cancelOrderBtn = document.querySelector("#cancel-order")
         cancelOrderBtn.addEventListener("click", this.cancelOrder.bind(this))
+        console.log(order);
+        console.log(this)
     }
 
-    cancelOrder(){
+    async cancelOrder(){
+        
         const config = {
-            method: "POST",
-            
+            method: "DELETE",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+        }
+        try{
+            const response = await fetch(baseURL+`orders/${this.id}`, config);
+            if(response.ok){
+                M.toast({html: `Your order has been cancelled!`,classes: 'rounded'})
+            }
+            else{
+                M.toast({html: `There was an error cancelling your order!`,classes: 'rounded'})
+                console.log(response)
+            }
+        }
+        catch(err){
+            console.log(err);
         }
     }
         

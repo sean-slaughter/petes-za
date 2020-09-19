@@ -17,8 +17,8 @@ class OrdersController < ApplicationController
     end
 
 
-    def delete
-        order = Order.find(id: params[:id]);
+    def destroy
+        order = Order.find_by(id: params[:id].to_i);
         if order.destroy
             render json: {status: :ok}
         else

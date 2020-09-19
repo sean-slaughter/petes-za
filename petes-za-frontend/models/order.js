@@ -94,12 +94,9 @@ class Order{
         `
         const cancelOrderBtn = document.querySelector("#cancel-order")
         cancelOrderBtn.addEventListener("click", this.cancelOrder.bind(this))
-        console.log(order);
-        console.log(this)
     }
 
     async cancelOrder(){
-        
         const config = {
             method: "DELETE",
             headers: {
@@ -111,6 +108,7 @@ class Order{
             const response = await fetch(baseURL+`orders/${this.id}`, config);
             if(response.ok){
                 M.toast({html: `Your order has been cancelled!`,classes: 'rounded'})
+                $(".orders-container").hide();
             }
             else{
                 M.toast({html: `There was an error cancelling your order!`,classes: 'rounded'})

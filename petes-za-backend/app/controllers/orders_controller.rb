@@ -16,16 +16,14 @@ class OrdersController < ApplicationController
         end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-    end
 
     def delete
+        order = Order.find(id: params[:id]);
+        if order.destroy
+            render json: {status: :ok}
+        else
+            render json: {status: :unprocessable_entity}
+        end
     end
 
 

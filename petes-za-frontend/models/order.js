@@ -96,7 +96,10 @@ class Order{
     }
 
     cancelOrder(){
-        alert("order is cancelled!")
+        const config = {
+            method: "POST",
+            
+        }
     }
         
 }

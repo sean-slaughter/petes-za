@@ -1,5 +1,6 @@
 body{
-    background-color: #001524
+    background-color: #001524;
+    font-family: 'Quattrocento Sans', sans-serif;
 }
 .landing-image{
     max-width : auto;
@@ -29,6 +30,7 @@ nav.nav-center ul li a {
 
 .btn{
     margin-right: 10px;
+    font-family: 'Quattrocento Sans', sans-serif;
 }
 
 .cart-img{
@@ -71,4 +73,10 @@ nav.nav-center ul li a {
 
 .collapsible{
     background-color: white;
+}
+.card-description{
+    font-size: large;
+}
+.card-title{
+    font-family: 'Satisfy', cursive;
 }

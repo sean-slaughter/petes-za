@@ -27,8 +27,8 @@ class Item{
             </div>
             <div class="card-reveal">
                 <span class="card-title">${this.name} <i class="material-icons right">close</i></span>
-                <p>${this.description}</p>
-                <p>$${this.price}</p>
+                <p class="card-description">${this.description}</p>
+                <p class="card-price">$${this.price}</p>
             </div>
             `
         card.querySelector(".add-cart").addEventListener('click', addToCart);

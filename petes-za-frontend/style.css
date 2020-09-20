@@ -1,6 +1,6 @@
 body{
     background-color: #001524;
-    font-family: 'Handlee', sans-serif;
+    font-family: 'Quattrocento Sans', sans-serif;
 }
 
 nav{
@@ -62,10 +62,12 @@ nav.nav-center ul li a {
     background-color: white;
     margin-top: 30px;
     padding: 10px;
+    padding-bottom: 25px;
     border: solid 1px;
     border-radius: 15px;
 }
 .order-container h3{
+    font-family: 'Handlee', cursive;
     margin-bottom: 5px;
 }
 
@@ -74,7 +76,7 @@ nav.nav-center ul li a {
     font-family: 'Quattrocento Sans', sans-serif;
 }
 .card-reveal{
-    font-family: 'Quattrocento Sans', sans-serif;
+    
     font-size: large;
 }
 .card-title{
@@ -82,4 +84,7 @@ nav.nav-center ul li a {
 }
 .header-logo{
     max-height: 500px;
+}
+h1{
+    font-family: 'Handlee', cursive;
 }

@@ -4,6 +4,9 @@ const menus = [];
 const cart = new Cart();
 document.addEventListener("DOMContentLoaded", function(){
     $(".orders-container").hide();
+    $(document).ready(function(){
+        $('.parallax').parallax();
+      });
     getMenus();
     const menuButtons = document.querySelectorAll(".menu-button")
     menuButtons.forEach(button => button.addEventListener("click", e => renderMenu(e)))

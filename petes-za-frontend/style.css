@@ -1,10 +1,8 @@
 body{
     background-color: #001524;
-    font-family: 'Quattrocento Sans', sans-serif;
+    font-family: 'Handlee', sans-serif;
 }
-.landing-image{
-    max-width : auto;
-}
+
 nav{
     background-color: #001524;
 }
@@ -30,7 +28,7 @@ nav.nav-center ul li a {
 
 .btn{
     margin-right: 10px;
-    font-family: 'Quattrocento Sans', sans-serif;
+    font-family: 'Handlee', sans-serif;
 }
 
 .cart-img{
@@ -73,10 +71,15 @@ nav.nav-center ul li a {
 
 .collapsible{
     background-color: white;
+    font-family: 'Quattrocento Sans', sans-serif;
 }
-.card-description{
+.card-reveal{
+    font-family: 'Quattrocento Sans', sans-serif;
     font-size: large;
 }
 .card-title{
-    font-family: 'Satisfy', cursive;
+    font-family: 'Handlee', cursive;
+}
+.header-logo{
+    max-height: 500px;
 }
